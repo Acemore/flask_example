@@ -1,0 +1,25 @@
+<form action="/users/{{ user.id }}/edit" method="post">
+  <div>
+    <label>
+      Nickname
+    </label>
+    <input type="text" name="nickname" value="{{ user.nickname }}" />
+
+    {% if errors %}
+      <div>{{ errors.nickname }}</div>
+    {% endif %}
+  </div>
+
+  <div>
+    <label>
+      Email
+    </label>
+    <input type="email" name="email" value="{{ user.email }}" />
+
+    {% if errors %}
+      <div>{{ errors.email }}</div>
+    {% endif %}
+  </div>
+
+  <input type="submit" value="Update" />
+</form>

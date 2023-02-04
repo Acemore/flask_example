@@ -1,0 +1,25 @@
+<form action="{{ url_for('users_get') }}" method="post">
+    <div>
+	<label>
+	    Nickname
+	    <input type="text" name="nickname" value="{{ user.nickname }}" />
+	</label>
+
+	{% if errors['nickname'] %}
+	  <div>{{ errors['nickname'] }}</div>
+	{% endif %}
+    </div>
+
+    <div>
+	<label>
+	    Email
+	    <input type="email" name="email" value="{{ user.email }}" />
+	</label>
+
+	{% if errors['email'] %}
+	  <div>{{ errors['email'] }}</div>
+	{% endif %}
+    </div>
+
+    <input type="submit" value="Sign Up" />
+</form>
